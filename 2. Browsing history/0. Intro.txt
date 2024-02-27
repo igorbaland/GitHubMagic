@@ -1,0 +1,6 @@
+- Search for commits (by author, date, message, etc)
+- View a commit
+- Restore our project to an earlier point
+- Compare commits
+- View the history of a file
+- Find a bad commit that intoduced the bug

@@ -1,0 +1,111 @@
+Bisect
+	 we have a bug in our application, we don't know where this bug was introduced
+
+git bisect start		//master | bisect	
+
+	commit
+		bad
+			git bisect bad		//the last commit
+
+		good
+			git log --oneline
+			git bisect good ca49180
+				Bisecting: 5 revisions left to test after this (roughly 3 steps)
+				[36cd6db402cfd897810d4cb33d97ac1e9d1ce2d8] Include the command prompt in code sample.
+					We are not in master anymore
+			
+			git log --oneline
+				the head is detached, we are not in master anymore
+				36cd6db (HEAD) Include the command prompt in code sample.
+
+			git log --oneline -all		
+				a642e12 (master, refs/bisect/bad) Add header to all pages.					//bad commits
+				50db987 Include the first section in TOC.
+				555b62e Include the note about committing after staging the changes.
+				91f7d40 Explain various ways to stage changes.
+				edb3594 First draft of staging changes.
+				24e86ee Add command line and GUI tools to the objectives.
+				36cd6db (HEAD) Include the command prompt in code sample.					//middle, left/right. If the bug was introduced in the right part, 
+																							we don't need to look at the left
+				9b6ebfd Add a header to the page about initializing a repo.
+				fa1b75e Include the warning about removing .git directory.
+				dad47ed Write the first draft of initializing a repo.
+				fb0d184 Define the audience.
+				1ebb7a7 Define the objectives.
+				ca49180 (refs/bisect/good-ca4918083ec471878d58612142572f3367faf5fd) Initial commit.		//good commits
+				
+			git bisect good
+				Bisecting: 2 revisions left to test after this (roughly 2 steps)
+				[91f7d40d6d5bbc336a271607a0488216aaf50cd7] Explain various ways to stage changes.
+				
+				git log --oneline -all
+					a642e12 (master, refs/bisect/bad) Add header to all pages.							
+					50db987 Include the first section in TOC.
+					555b62e Include the note about committing after staging the changes.				//middle
+					91f7d40 (HEAD) Explain various ways to stage changes.
+					edb3594 First draft of staging changes.
+					24e86ee Add command line and GUI tools to the objectives.
+					36cd6db (refs/bisect/good-36cd6db402cfd897810d4cb33d97ac1e9d1ce2d8) Include the command prompt in code sample.				//below part checked
+					9b6ebfd Add a header to the page about initializing a repo.
+					fa1b75e Include the warning about removing .git directory.
+					dad47ed Write the first draft of initializing a repo.
+					fb0d184 Define the audience.
+					1ebb7a7 Define the objectives.
+					ca49180 (refs/bisect/good-ca4918083ec471878d58612142572f3367faf5fd) Initial commit.
+				
+			git bisect good 
+				Bisecting: 0 revisions left to test after this (roughly 1 step)
+				[50db98710ed4330773f1df55b2a177600d523c9e] Include the first section in TOC.
+
+				git log --oneline --all
+					a642e12 (master, refs/bisect/bad) Add header to all pages.
+					50db987 (HEAD) Include the first section in TOC.
+					555b62e Include the note about committing after staging the changes.
+					91f7d40 (refs/bisect/good-91f7d40d6d5bbc336a271607a0488216aaf50cd7) Explain various ways to stage changes.			//below part checked
+					edb3594 First draft of staging changes.
+					24e86ee Add command line and GUI tools to the objectives.
+					36cd6db (refs/bisect/good-36cd6db402cfd897810d4cb33d97ac1e9d1ce2d8) Include the command prompt in code sample.
+					9b6ebfd Add a header to the page about initializing a repo.
+					fa1b75e Include the warning about removing .git directory.
+					dad47ed Write the first draft of initializing a repo.
+					fb0d184 Define the audience.
+					1ebb7a7 Define the objectives.
+					ca49180 (refs/bisect/good-ca4918083ec471878d58612142572f3367faf5fd) Initial commit.
+					
+			bit bisect bad
+				Bisecting: 0 revisions left to test after this (roughly 0 steps)
+				[555b62e1ebb92c97fc69910ad0981a7d6dbbf8c6] Include the note about committing after staging the changes.
+				
+				git log --oneline --all
+					a642e12 (master) Add header to all pages.
+					50db987 (refs/bisect/bad) Include the first section in TOC.
+					555b62e (HEAD) Include the note about committing after staging the changes.
+					91f7d40 (refs/bisect/good-91f7d40d6d5bbc336a271607a0488216aaf50cd7) Explain various ways to stage changes.
+					
+					git bisect bad
+						555b62e1ebb92c97fc69910ad0981a7d6dbbf8c6 is the first bad commit		//full information about bad commit
+						commit 555b62e1ebb92c97fc69910ad0981a7d6dbbf8c6
+						Author: Moshfegh Hamedani <moshfegh@live.com.au>
+						Date:   Mon Aug 17 14:26:49 2020 -0700
+
+							Include the note about committing after staging the changes.
+
+						 sections/creating-snapshots/staging-changes.txt | 2 ++
+						 1 file changed, 2 insertions(+)
+						 
+			git bisect reset			//now we are on master
+				 (master)
+
+
+
+
+
+
+
+
+
+
+
+
+			
+		

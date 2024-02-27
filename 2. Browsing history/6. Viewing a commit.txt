@@ -1,0 +1,57 @@
+(Head -> master)	//Head is the front of the last commit
+
+git show HEAD~2 	//the whole changes of commit
+	commit 555b62e1ebb92c97fc69910ad0981a7d6dbbf8c6
+	Author: Moshfegh Hamedani <moshfegh@live.com.au>
+	Date:   Mon Aug 17 14:26:49 2020 -0700
+
+		Include the note about committing after staging the changes.
+
+	diff --git a/sections/creating-snapshots/staging-changes.txt b/sections/creating-snapshots/staging-changes.txt
+	index bddf7bd..506a158 100644
+	--- a/sections/creating-snapshots/staging-changes.txt
+	+++ b/sections/creating-snapshots/staging-changes.txt
+	@@ -7,3 +7,5 @@ To stage the changes, run:
+	 You can add multiple files separated by a space.
+	 You can use a . to add all the files and subdirectories recursively.
+
+	+Once you stage the changes, you need to commit them to store the
+	+proposed snapshot permanently.
+	\ No newline at end of file
+
+
+
+	git show HEAD~2:sections/creating-snapshots/staging-changes.txt			//final version of this file stored in this commit
+		STAGING CHANGES
+		===============
+		To stage the changes, run:
+
+		> git add <filename>
+
+		You can add multiple files separated by a space.
+		You can use a . to add all the files and subdirectories recursively.
+
+		Once you stage the changes, you need to commit them to store the
+		proposed snapshot permanently.
+
+	
+	git show HEAD~2 --name-only
+		commit 555b62e1ebb92c97fc69910ad0981a7d6dbbf8c6
+		Author: Moshfegh Hamedani <moshfegh@live.com.au>
+		Date:   Mon Aug 17 14:26:49 2020 -0700
+
+			Include the note about committing after staging the changes.
+
+		sections/creating-snapshots/staging-changes.txt
+		
+		
+	git show HEAD~2 --name-status
+		commit 555b62e1ebb92c97fc69910ad0981a7d6dbbf8c6
+		Author: Moshfegh Hamedani <moshfegh@live.com.au>
+		Date:   Mon Aug 17 14:26:49 2020 -0700
+
+			Include the note about committing after staging the changes.
+
+		M       sections/creating-snapshots/staging-changes.txt
+
+	

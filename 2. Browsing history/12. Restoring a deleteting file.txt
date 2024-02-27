@@ -1,0 +1,16 @@
+git rm toc.txt
+git commit -m "Remove toc.txt"
+
+git --oneline -- toc.txt					//all commits that touched removed file.   
+	5cdf444 (HEAD -> master) Remove toc.txt
+	a642e12 Add header to all pages.
+	50db987 Include the first section in TOC.
+	ca49180 Initial commit.
+	
+	We need to look at parent of this commit.
+		a642e12
+			git checkout a642e12 toc.txt
+				Updated 1 path from 246d37c
+				
+				git status -s
+					A  toc.txt

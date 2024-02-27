@@ -1,0 +1,4 @@
+Install extension 
+	GitLens in VSCode
+		After installed it, we are going to see a new Icon in VSCode
+		

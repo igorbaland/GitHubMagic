@@ -1,0 +1,47 @@
+
+			HEAD -> pointer for branches, in this case master
+			
+			MASTER	-> pointer to the last commit, after we create a commit
+						Master move for to point to the last commit
+()<-()<-()<-()
+
+
+git checkout commitId
+	Head is not pointing to a master
+	Head is pointing to the specific commit
+	In this situatiuation 
+	WE SHOULD NOT CREATE A NEW COMMIT, we should only view our code
+	
+		If we create a new commit
+			the new commit will added over  commit id
+			
+			()		//dead commit
+			|
+			()<-()<-()
+			
+git log --oneline
+	dad47ed (HEAD) Write the first draft of initializing a repo.		//we only see the HEAD pointer
+	fb0d184 Define the audience.										//we don't have the master pointer
+	1ebb7a7 Define the objectives.
+	ca49180 Initial commit.
+	
+	
+git log --oneline --all			
+	a642e12 (master) Add header to all pages.							//master pointer
+	50db987 Include the first section in TOC.
+	555b62e Include the note about committing after staging the changes.
+	91f7d40 Explain various ways to stage changes.
+	edb3594 First draft of staging changes.
+	24e86ee Add command line and GUI tools to the objectives.
+	36cd6db Include the command prompt in code sample.
+	9b6ebfd Add a header to the page about initializing a repo.
+	fa1b75e Include the warning about removing .git directory.
+	dad47ed (HEAD) Write the first draft of initializing a repo.		//Head is not pointing to master anymore
+	fb0d184 Define the audience.
+	1ebb7a7 Define the objectives.
+	ca49180 Initial commit.
+	
+git checkout master			//to attach head to master 
+
+	
+	

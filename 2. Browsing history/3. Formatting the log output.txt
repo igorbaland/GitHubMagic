@@ -1,0 +1,13 @@
+Customize the log command
+
+git log --pretty=format:"hello %an"	//dynamically, %an > autor name
+
+git log --pretty=format:"%an committed %H"	//%H > long hashId
+						%h > short hashId
+	https://git-scm.com/docs/git-log	//all placeholder
+
+git log --pretty=format:"%an committed %h on %cd"		//%cd commit date
+
+git log --pretty=format:"%Cgreen%an committed %h on %cd"	//change the output color
+			"%Cgreen%an%Creset committed %h on %cd"		//%Cgreen%an%Creset only autor name	
+

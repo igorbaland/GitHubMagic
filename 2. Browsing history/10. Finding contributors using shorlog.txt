@@ -1,0 +1,29 @@
+git shortlog
+	Moshfegh Hamedani (13):
+      Initial commit.
+      Define the objectives.
+      Define the audience.
+      Write the first draft of initializing a repo.
+      Include the warning about removing .git directory.
+      Add a header to the page about initializing a repo.
+      Include the command prompt in code sample.
+      Add command line and GUI tools to the objectives.
+      First draft of staging changes.
+      Explain various ways to stage changes.
+      Include the note about committing after staging the changes.
+      Include the first section in TOC.
+      Add header to all pages.
+	  
+git shortlog -h
+
+git shortlog -n 		//list is sorted based on the number of commits per autor
+
+	git shortlog -n -s		//to supprese the commit messages
+		 13  Moshfegh Hamedani
+		 
+	git shortlog -n -s -e
+		 13  Moshfegh Hamedani <moshfegh@live.com.au>
+		 
+	git shortlog -n -s -e --before="" --after=""		//date range
+
+

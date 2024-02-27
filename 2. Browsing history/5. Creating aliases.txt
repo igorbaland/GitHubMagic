@@ -1,0 +1,10 @@
+git config --global alias.lg "log --pretty=format:'%an committed %h'"		
+
+git config --global -e
+	alias
+		lg
+
+	git lg
+
+
+git config --global alias.unstage "restore --staged ."		//restore all these files in staging area

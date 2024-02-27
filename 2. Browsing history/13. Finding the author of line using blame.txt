@@ -1,0 +1,8 @@
+git blame audience.txt
+	a642e122 (Moshfegh Hamedani 2020-08-18 09:23:19 -0700 1) AUDIENCE
+	a642e122 (Moshfegh Hamedani 2020-08-18 09:23:19 -0700 2)
+	fb0d184c (Moshfegh Hamedani 2020-08-17 14:18:09 -0700 3) This course is for anyone who wants to learn Git.
+	a642e122 (Moshfegh Hamedani 2020-08-18 09:23:19 -0700 4) No prior experience is required.
+
+	git blame -e audience.txt					//with mail
+	git blame -e -L 1,3	audience.txt			//only 1-3 lines

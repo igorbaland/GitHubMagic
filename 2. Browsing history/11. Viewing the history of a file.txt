@@ -1,0 +1,73 @@
+we want to see all the commits that touched specific file
+
+ls				
+	audience.txt  objectives.txt  sales-page.txt  sections/  toc.txt
+	
+	git log toc.txt
+		commit a642e1229e3cb69be9bf075d9fe5e752e9a17458 (HEAD -> master)
+		Author: Moshfegh Hamedani <moshfegh@live.com.au>
+		Date:   Tue Aug 18 09:23:19 2020 -0700
+
+			Add header to all pages.
+
+		commit 50db98710ed4330773f1df55b2a177600d523c9e
+		Author: Moshfegh Hamedani <moshfegh@live.com.au>
+		Date:   Mon Aug 17 14:27:50 2020 -0700
+
+			Include the first section in TOC.
+
+		commit ca4918083ec471878d58612142572f3367faf5fd
+		Author: Moshfegh Hamedani <moshfegh@live.com.au>
+		Date:   Mon Aug 17 14:17:15 2020 -0700
+
+			Initial commit.
+			
+		git log --oneline toc.txt
+			a642e12 (HEAD -> master) Add header to all pages.
+			50db987 Include the first section in TOC.
+			ca49180 Initial commit.
+			
+			git log --oneline --stat toc.txt
+				a642e12 (HEAD -> master) Add header to all pages.
+				 toc.txt | 2 +-
+				 1 file changed, 1 insertion(+), 1 deletion(-)
+				50db987 Include the first section in TOC.
+				 toc.txt | 6 +++++-
+				 1 file changed, 5 insertions(+), 1 deletion(-)
+				ca49180 Initial commit.
+				 toc.txt | 1 +
+				 1 file changed, 1 insertion(+)
+				 
+		git log --oneline --patch
+		
+			a642e12 (HEAD -> master) Add header to all pages.
+				diff --git a/toc.txt b/toc.txt
+				index d019492..cc0798f 100644
+				--- a/toc.txt
+				+++ b/toc.txt
+				@@ -1,5 +1,5 @@
+				 TABLE OF CONTENT
+				-================
+				+
+				 Creating Snapshots
+				   - Initializing a repository
+				   - Staging changes
+				\ No newline at end of file
+				50db987 Include the first section in TOC.
+				diff --git a/toc.txt b/toc.txt
+				index 8b13789..d019492 100644
+				--- a/toc.txt
+				+++ b/toc.txt
+				@@ -1 +1,5 @@
+				-
+				+TABLE OF CONTENT
+				+================
+				+Creating Snapshots
+				:
+
+
+				 
+			
+
+
+
