@@ -1,0 +1,51 @@
+Initializing repository
+	current directory
+
+		#intialize git stage
+		git init
+			.git	//created hide folder
+				Windows
+					dir /a		/*a for all*/
+						open folder
+							start folderName
+							start .git
+				Mac
+					ls -a
+						open .git
+					
+					remove folder
+						rm -rf .git
+						
+Git Workflow
+	our project directory 
+		modify files
+		
+	staging area/index
+		allows to review our work before recording a snapshot
+	
+	git repository (.git)
+		creating a commit
+			taking snapshot
+			
+	Example:
+		our project
+			added a couple files
+				
+				adding to the staging area
+					git add file1 file2
+					
+					adding to repository
+					git commit -m "Initial commit."		//message, what this snapshot represents
+						(history to reference)
+							
+							after we commit 
+								the staging area ISN'T empty
+								
+Commit information 
+	Id
+	Message
+	Date/Time
+	Author
+	Complete snapshot
+							
+	

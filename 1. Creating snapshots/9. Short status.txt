@@ -1,0 +1,49 @@
+working directory
+	modify file
+		echo sky >> file1.js
+	add a new file
+		echo sky > file2.js
+
+git status
+	modified:	file1.js
+	Untracked files:
+		file2.js
+
+		Output this command is 
+			very comprehesive
+
+git status -s
+	M  			file.js		//M(red) modified, some changes, but these changes are not in a staging area
+	?? 			file.js		//?? not added 
+	
+	staging area		working directory
+
+git add file1.js
+
+	git status -s
+	
+		M		file1.js	//green M
+		??		file2.js
+
+echo ocean >> file.js
+	
+	git status -s
+
+		MM file1.js		//green M, we have some changes in the staging area. Red M, we have additional changes 
+					in a working directory, that is not adding to the staging area
+		?? file2.js
+
+git add file1.js
+
+	git status -s
+
+		M		file1.js
+		??		file2.js
+
+git add file2.js
+
+	git status -s
+
+		M		file1.js
+		A		file2.js		//A added
+		

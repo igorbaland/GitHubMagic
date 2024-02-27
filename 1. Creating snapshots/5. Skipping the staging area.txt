@@ -1,0 +1,3 @@
+git commit -am
+	-a (all)
+	-m (message)

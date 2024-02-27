@@ -1,0 +1,34 @@
+mv file1.txt main.js		//move (rename)
+
+git status
+	Changes not staged from commit:
+		deleted: file1.txt
+	Untracked files:
+		main.js	
+			two changes
+				both these changes are unstaged
+
+	git add file1.txt
+		staging the deletion
+	git add main.js
+		adding a new untrack file
+
+git status
+	renamed: file1.txt -> main.js
+		item is indicated by green, which means 
+			this is in a staging area
+
+Renaming two steps operation
+	1. We have to modify our working directory
+	2. We have to stage two types of changes
+		addition
+		deletion
+
+With Git command
+	git mv main.js file1.js
+	git commit -m "Refactor code."
+
+		
+
+
+		

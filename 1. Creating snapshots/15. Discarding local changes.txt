@@ -1,0 +1,16 @@
+There are times that we have some code in our working directory
+	that we want to throw away
+
+git status -s
+ M	file1.js
+??	file2.js
+			//to undo this changes
+			git restore .
+			git status -s
+				?? file2.js
+					but file is still here. Why is that?
+					This is a new untracked file. 
+
+git clean		
+	git clean -f	
+		

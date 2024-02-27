@@ -1,0 +1,82 @@
+mkdir logs
+echo hello > logs/dev.log
+git status
+	untracked directory called logs
+
+echo logs/ > .gitignore
+	created file gitignore with content
+		log/
+		main.log		//add
+		*.log
+
+git status
+	untracked files
+		.gitignore
+
+	git add .gitignore
+	git commit -m "Add gitignore"
+
+THIS ONLY WORK, IF WE HAVE ALREADY INCLUDED A FILE OR A DIRECTORY IN OUR REPOSITORY.
+	In other words, if we accidentally include a file in our repository
+		and then later added to git ignore
+			git is not gonna ignore that
+
+	Example:
+		mkdir bin
+		echo hello > bin/app.bin
+		git status
+		git add .
+		git commit -m "Add bin."
+			Problem, every time we compile our code
+				Git is going to say this file
+					bin/app.bin
+						is changed
+		We have to stage it and then commit it. It doen's make sense
+
+		.gitignore
+			bin/
+		git add .
+		git commit -m "Include bin/ in gitignore."
+
+		In this case, 
+			git is not going to ignore the changes in this directory
+				because it's already tracking this directory.
+
+		echo helloworld > bin/app.bin
+		git status
+			modified: bin/app.bin
+
+Solve this problem
+	we have to remove this file
+		from staging area
+	git ls-files
+		git rm Remove file from			//carefully***
+			project directory and
+			staging area 
+
+	remove only from staging area 
+		git rm -h					//help
+			git rm --cached bin/			/*with this we can remove stuff only from
+									the index. Index is the alternate for the
+										staging area 	
+								index == staging area*/
+
+				we get an error							 
+					fatal: not removing 'bin/' recursively without -r		//recursive all sub- files and folders
+			
+			git rm --cached -r bin/
+			git ls-files
+			git status
+				changes to be commited:
+					deleted: bin/app.bin
+			git commit -m "Remove the bin directory that was accidentally commited."
+
+			test
+				echo test > bin/app.bin
+				git status
+
+different languages - different default templates of gitignore
+								
+
+		
+	

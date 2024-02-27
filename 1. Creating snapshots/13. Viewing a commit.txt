@@ -1,0 +1,32 @@
+git show		//show the differenses 			
+	d601b90			//two ways to show a commit
+	HEAD~			//~ look at previous commit
+		HEAD~1			//1 how many steps we want to go back
+				//show the  last commit
+
+git show HEAD~1:.gitignore
+		bin/app.bin		//if this file is in a subdirectory
+
+git ls-tree HEAD~1		//ls-tree, list all the files and directories store in this commit
+
+	100644 blob e83269f4cf21221ea29f4c1f421c5e6df20b3ca5    .gitignore		//files using blob
+	040000 tree 64629cd51ef4a65a9d9cb9e656e1f46e07e1357f    bin			//directories,folders are represented using tree
+	100644 blob 2040de9f8f686e534d64ac459a31748e8a391bbd    file1.txt
+
+		git show e832		//we don't need to type the whole hash, as long as there is ambiguity
+			log/
+			main.log
+			*.log
+			bin/
+
+
+Git Objects
+	Commmits
+
+	blobs(files)
+
+	Trees(Directories)
+
+	Tags
+
+	

@@ -1,0 +1,33 @@
+git status -s
+	MM	file1.js
+	A	file2.js
+		In this case, we want undo the add operation
+
+//In the past reset, but a lot of people found this command confusing, especially with options such as
+	git reset --soft
+		  --hard
+
+//the new command restore
+	check version for the new command
+		git --version
+		2.28.0+
+
+	git restore --staged file1.js
+				*.js			//multiple files
+				file1.js file2.js
+
+	//restore command takes the copy from the next environment and put it in the staging area
+						the last commit
+
+
+	git status -s
+		 M file1.js		//we longer any changes in file1 in the staging area, all the changes are in aworking directory
+		A  file2.js		//we have this in the staging area, but this file doesn't exist in the last commit
+					//we don't have a copy of this file in our repository or our last commit, 
+					git is going remove this file from the staging area and take it back to the previous state
+					new untracked file
+
+					git restore --staged file2.js
+					git status -s
+						 M	file1.js
+						??	file2.js	// ?? untracked filed

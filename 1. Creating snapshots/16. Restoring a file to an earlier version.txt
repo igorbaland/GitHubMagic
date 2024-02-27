@@ -1,0 +1,19 @@
+Restoring the file previousversion, not undoing a last commit.
+
+git log --oneline
+	8dd58b8 (HEAD -> master) delete file1.js.
+	606fcbd Remove bin dierctory that was accindetally commited.		//this commit
+	4206154 Include bin/ in gitignore.
+	8dd2772 Add bin.
+	8dd5300 Add gitignore.
+	61d9245 Removed unused code.
+	87596e6 fix the bug that prevented the users from signingup.
+	e1ea434 Initial commit.
+
+git restore -h
+	[<options>] [--source=<branch>] <file>
+
+	git restore --source=HEAD~1 file1.js
+	
+
+	

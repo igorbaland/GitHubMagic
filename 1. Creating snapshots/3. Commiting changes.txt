@@ -1,0 +1,15 @@
+git commit -m "Initial commit."
+				"Bug fixed."
+				
+git commit
+	open default Editor
+		Top
+			Short description.
+		
+			(line break)
+		
+			Long description.
+			
+			2 files changed, 3 insertions
+			file 1				file2
+			

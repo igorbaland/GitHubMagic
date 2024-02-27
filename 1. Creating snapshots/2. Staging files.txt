@@ -1,0 +1,29 @@
+#Staging files
+(create file via cmd, windows)
+	echo. > file1.txt
+		file2.txt
+		
+#setContent
+	echo content... > file.txt
+
+#git status
+	untrack files
+	
+git add 
+	file1.txt file2.txt
+	*.txt		//all file with ttxt extension
+	.			//entire directory, not recommended
+		add to stage
+		
+git status
+modify file1.txt
+
+git status
+	modified:	file.txt
+	
+git add file1.txt
+
+git status 
+
+
+

@@ -1,0 +1,25 @@
+git log
+
+	commit 606fcbd5901dfa46e9101f96e792aba522837e82 (HEAD -> master)
+	Author: Igor <igor.balandin@gmx.de>
+	Date:   Tue Jan 30 14:01:35 2024 +0100
+
+
+	each commit has a unique identifier (hexadecimal string)
+		HEAD -> master
+			main branch (trunk)
+				multiple branches
+					
+
+git log --oneline
+	show us as summary of the commits.
+
+git log --oneline --reverse
+	e1ea434 Initial commit.
+		87596e6 fix the bug that prevented the users from signingup.
+		61d9245 Removed unused code.
+		8dd5300 Add gitignore.
+		8dd2772 Add bin.
+		4206154 Include bin/ in gitignore.
+		606fcbd (HEAD -> master) Remove bin dierctory that was accindetally commited.
+	

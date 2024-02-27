@@ -1,0 +1,15 @@
+Too big or too long.
+
+Don't make a commit, every time we update a file
+
+2 seperates commit:
+	Fixing a bug
+	Typo
+
+Meaningful commit messages
+	History
+
+
+Wording
+	past
+		fixed the bug

@@ -1,0 +1,10 @@
+git config --global diff.tool vscode
+
+how to lunch vscode
+	git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
+
+test/open gitconfig editor
+	git config --global -e
+
+See changes
+	git difftool

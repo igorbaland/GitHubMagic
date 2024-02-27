@@ -1,0 +1,36 @@
+rm file2.txt
+	remove standard unix command
+		no git at the beginning
+
+	Changes not staged for commit
+		We removed file from our working directory,
+			but still exists in the staging area
+
+		git ls-files
+			the files in our staging area, still here
+
+	git add file2.txt
+		to stage this change
+
+		git ls-files
+			file2.txt is no longer in the staging area
+
+		git status
+			deleted:	file2.txt
+
+		git commit -m "Removed unused code."
+
+
+BOTH COMMANDS IN ONE STEP to remove
+	working directory
+	staging area
+	
+
+	git rm file2.txt	//1) we can specify multiple files 
+					file1.txt file2.txt
+				//2) we can also use  patterns
+					*.txt
+					
+		
+
+				
