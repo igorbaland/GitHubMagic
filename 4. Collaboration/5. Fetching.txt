@@ -1,0 +1,19 @@
+fetching repository
+Local
+	is not connected to remote repository
+		git fetch		#to download this new commit
+					
+
+			#fast-forward
+			git switch master		#local master
+			git merge origin/master		#in this case, fast-forward merge (no diverged), local master pointer forward to to the origin/master
+
+			#
+			git branch -vv 			#shows how our lacal and remote tracking branches are diverging
+				*master shortCommitId [origin/master: behind 1] Initial commit
+			git merge origin/master
+				fast-forward
+
+			git log --oneline --all --graph (master and origin/master are poiniting to the same commit
+
+			git branch -vv		#verify

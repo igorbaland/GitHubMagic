@@ -1,0 +1,72 @@
+Create a branch directly on github
+
+git fetch 
+*[new branch]
+*[new tag]
+
+git branch
+*master		#we only see master
+
+git branch -r
+	#we have a remote tracking branch
+
+	git switch -C feature/change-password origin/feature/change-password
+				#put together remote with local branch
+
+
+#simulate second collaborator
+#github, code -> url
+
+	git clone url
+
+		cd projectName
+		git switch -C feature/change-password origin/feature/change-password
+
+			#make same changes on the origin branch
+			echo password > file1.txt 
+
+			git commit -am "Update file1"
+
+			git push 	#verify on github commit, change branch
+
+
+#closing branch
+git pull
+
+git log --oneline --all --graph
+
+	#merge 
+	git switch master
+
+		git merge feature/change-password		
+		git log --oneline --all --graph
+
+		git push
+		git log --oneline --all --graph		#verify on github
+
+		git push -d origin feature/change-password
+			git branch
+				git branch -d feature/change-password
+			git branch
+			git branch -r
+
+
+
+	#second collaborator
+		git switch master
+
+		git pull	#the same history
+
+		git branch
+			git branch -d feature/change-password
+
+		git branch -r		#we still have tracking branch
+			
+			git remote prune origin		#reduzieren
+
+			git branch -r
+
+
+
+
+

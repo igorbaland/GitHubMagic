@@ -1,0 +1,20 @@
+cloning repository
+	code
+		copy url
+
+		open git bash
+			git clone https//github.com/author/repoName.git	
+			
+			#if we don't want the same project name
+			git clone https//github.com/author/repoName.git	MarsProject 
+
+			cd MarsProject
+			git log --oneline --all --graph
+
+			#pointers
+			HEAD -> master, origin/master, origin/HEAD		#the last two pointers red
+			#origin it the reference to that repository/master branch in our origin repository
+			#origin/head, head pointer in our origin repository
+
+			git remote	#list of remote repositories
+				git remote -v		#verbose, see more details about this remote repository

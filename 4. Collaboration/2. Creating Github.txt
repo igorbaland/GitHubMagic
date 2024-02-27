@@ -1,0 +1,7 @@
+github.com
+	registration
+
+
+create repository
+	public
+	private

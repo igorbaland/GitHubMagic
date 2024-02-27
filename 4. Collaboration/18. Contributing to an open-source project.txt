@@ -1,0 +1,28 @@
+our project -> choose project -> tab fork
+
+git clone url
+
+cd ...
+
+git switch -C bugfix
+echo hello > README.md
+
+git commit -am "Update README"
+
+git push -u origin bugfix
+	username
+	password
+
+
+#github
+bugfix had recent pushes less than...
+	compare and pull request
+		base repository (main/official repository): ... base: master
+		head repository (fork repository):... compare: bugfix
+
+		title: Bugfix change password
+
+			"freelancer/second collaborator..." can't merge and close this request. 
+				only the maintainer can merge and close.
+					merge pull request
+

@@ -1,0 +1,66 @@
+#to bring local and remote repository together
+	fetch + merge 
+#pull command, combine this 2 commands
+	pull = fetch + merge
+
+Local			Remote
+      Master			Master
+      |				|
+(A)<-(B)		(A)<----(C)
+ \
+  (C)	#now our branches have diverged
+   |
+   origin/MASTER
+
+
+
+#three-way-merge
+	Master
+	   |
+(A)<-(B)<-(M)
+  \	  /
+     (C)
+      |
+   origin/Master
+
+
+
+
+#rebasing/nonlinear history
+(A)	Master
+  \      |
+   (C)<-(B)
+    |
+    origin/master
+
+
+#diverged
+	#remote
+		adding some changes
+	#local
+		adding some changes
+
+	git log --oneline --all --graph
+
+		git pull	#downloading from repository, perform three-way merged/to bring this changes into a master
+			git log --oneline --all --graph
+			* (HEAD -> master)
+			| \
+			|  *
+			*  |
+			| /
+			*
+
+	#rebasing
+	git reset --hard HEAD~1		#previous state
+		git log --oneline --all --graph
+		*		#our branches have diverged
+		|  *
+		| /
+
+		git pull --rebase
+
+			git log --oneline --all --graph
+				*		#simple linear history
+				*
+				*

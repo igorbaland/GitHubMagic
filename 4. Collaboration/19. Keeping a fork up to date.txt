@@ -1,0 +1,36 @@
+Base		Fork
+     \
+	pull
+	\
+		Contributor
+
+
+git remote
+git remote -v
+
+git remote add upstream  url 		#base, upstream
+git remote
+git remote -v
+
+git remote rename upstream base
+git remote rm base
+
+
+#github, base_account
+#Some changes in README
+commit changes
+
+#github, fork repository account
+this branch is 1 commit behind ...:master
+#git
+git fetch base					#get a new commit from a base repository, not from fork repo
+	new branch master -> base/master
+git log --oneline --graph
+git switch master
+git merge base/master		#merge base/master into a local master
+git log --oneline --graph
+git push	#push in our fork repository
+	#github
+	this branch is even with ...master
+
+

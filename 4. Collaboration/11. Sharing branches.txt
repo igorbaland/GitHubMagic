@@ -1,0 +1,30 @@
+git switch -C feature/change-password
+
+git push
+	fatal: the current branch...
+
+git branch -vv
+	feature/change-password		#local is not linked to remote tracking branches
+	
+	#to see all tracking branches to remote
+	git branch -r
+
+#link our local branch to origin
+git push -u origin feature/change-password		#verify on github
+
+git branch -vv
+git branch -r
+
+
+#remove branch
+git push -d origin feature/change-password
+
+	git branch -r		#removed tracking
+	
+	git branch -vv		#we still have local branch
+		git branch
+			
+			# to delete local
+			git switch master
+			git branch -d feature/change-password
+	

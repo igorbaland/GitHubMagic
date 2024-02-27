@@ -1,0 +1,49 @@
+local
+		Master
+		   |
+	(a)<-(b)<-(c)
+	      |
+	origin/master
+
+
+
+remote
+	    Master
+	      |
+	(a)<-(b)
+
+
+push command to send this new commit to origin
+
+	local
+			
+
+		Master
+		   |
+	(a)<-(b)<-(c)
+	      	   |
+		origin/master		#move pointer
+	
+
+
+
+	remote
+
+		Master
+		   |
+	(a)<-(b)<-(c)			#add local to the origin
+
+
+
+
+git push origin master			#currently we are ont the master branch, we can drop master
+					#if we drop origin, git will take origin by default
+
+	git push
+		#enter 
+			username
+			password
+					#git sent a new commit to origin
+					
+		
+	

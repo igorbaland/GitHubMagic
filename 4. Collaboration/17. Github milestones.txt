@@ -1,0 +1,21 @@
+Milestones
+	to track the progress of various issues
+		we can add a bunch of various issues to a milestone
+			and then see how much we have progress in that milestone.
+
+Issue tab -> milestones -> new milestone
+
+title: (meaningful to the team), example. 2.0.0 (version of our software)
+	title: 2.0.0
+
+date
+description
+
+progress
+0% complete
+0 open
+0 closed
+
+
+closed progress
+issue tab -> select issue -> mark as closed

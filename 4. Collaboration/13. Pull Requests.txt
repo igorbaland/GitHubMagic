@@ -1,0 +1,95 @@
+Quite often as part of implementing a feture or fixing a bug, we would like other team members feedback about our code.
+ This is where we use pull requests
+
+2. collaborator
+git switch -C feature/login
+	echo hello > file3.txt
+
+	git add . 
+
+	git commit -m "write hello to file3"
+
+
+		# push this branch
+
+
+			git push -u origin feature/login
+				
+
+#before merging this branch in master
+#starting pull requests/discussion in team
+#github
+	pull requests
+
+		create a new pull request
+			title:	Feature: Social Login
+			details: Some details ...
+
+				create pull request
+
+					[author] wants to merge 1 commit into master from branchName
+						Setting (Symbol) -> choose collaborator/-s
+
+							Yellow icon after collaboratorName
+
+
+1. Collaborator
+	pull requests
+		choose pool request
+			autorname requested you review on this pull request
+				add your review ("this line is good, but it's better if u capitalized H.") 
+					start review
+
+				finish your review
+					"pls make these changes and do another push."
+						mark it:
+							as comment
+							approve
+							requestmore changing (choosed)
+								submit review
+
+
+2. Collaborator
+echo Hello > file3.txt
+git commit -am "Capitalize Hello."
+git push
+Re-request revien (update symbol) 
+
+1. Collaborator 
+	Info: collaborator1 requested your review  on this pull request
+		add a second review
+		(click on the file, to see updated code/Files changed)	
+		click checkbox: Viewed 
+			Review changes
+				Write: leave comment "Everything look perfect. Let's go ahed with merging!"
+					Approve
+						Submit the review
+							Collaborator1 approved these changes
+
+
+2 opinions to merge this request, collaborator1 or collaborator2
+	1. Some teams believe: can't be merged/closed by creator
+	2. Anyone can start and close them.
+		
+	depending on team
+
+		merge options
+			create a merge
+			squash and merge
+			rebase and merge
+				delete branch
+
+
+2. Collaborator
+	git switch master
+
+		git pull
+		git log --oneline --all --graph
+
+		#delete on local origin branch
+		git remote prune origin
+		git branch -r
+
+		git branch -d feature/login
+
+

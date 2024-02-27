@@ -1,0 +1,8 @@
+Issue tab -> labels
+all the default labels that exists in every Github repository.
+
+label name
+description
+color
+
+create a label

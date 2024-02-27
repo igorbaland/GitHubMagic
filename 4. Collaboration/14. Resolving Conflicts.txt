@@ -1,0 +1,59 @@
+conflicts with merging and pull request
+
+Amy machine -> Amy
+Igor machine -> Igor
+
+Amy
+git switch -C feature/logout
+
+echo hello > file1.txt
+
+git commit -am "Write hello to file1"
+
+
+git push -u origin feature/logout
+
+
+	#adding conflict:
+	git switch master
+	echo > world > file1.txt
+	git commit -am "Write world to file1"
+	git push 
+
+	#github
+	compare & pull request
+		Error: Can't automaticaly merge
+
+		
+		title: Feature: logout
+		discription: can be empty
+
+		Create pull request
+
+			This branch has conflict that must be resolved
+
+		
+		#resolve conflicts
+
+		<<<<< feature/logout		#on future/logout branch hello
+		hello
+		=====
+		world
+		>>>>> master		#on master branch added world
+
+		#keep both these changes
+		#in editor (github) remove 
+
+			hello
+			world
+
+				button: mark as resolved
+
+					button: commit, the changes on the branch feature/logout
+
+						button: merge the pull request
+				
+		
+
+		
+		

@@ -1,0 +1,8 @@
+adding collaborators
+	...
+		settings
+			access
+
+			Invite collaborator
+				
+				accept/decline the inventation

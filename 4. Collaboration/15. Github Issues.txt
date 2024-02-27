@@ -1,0 +1,21 @@
+create a new Issues 
+
+title: Send email when someone signs up.
+
+details/leave comment:
+
+attach files by dragging ...
+
+Assignees (include collaborator)
+
+labels
+	bug
+	documentation
+	duplicate
+	enhancement
+	good first issue
+
+
+submit a new issue
+
+Everyone can see who is working on what

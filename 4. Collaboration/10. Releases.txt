@@ -1,0 +1,20 @@
+#create tag on github (remote)
+#git will automatically add to the latest commit
+
+	tag version	v1.0
+	branch
+	title		v1.0 (we can use the sam value)
+	write		#Release notes
+			- Fixed bug 1
+			- Fixed bug 2
+			- Added a form ...
+		preview
+	attach 
+		checkBox pre-release	(not finished)
+	publish release
+
+	
+buttons
+	edit
+	delete
+

@@ -1,0 +1,30 @@
+Centralized
+	single repository that is shared by all team members.
+		Problem
+			Everyone is dependent on this central repository. 
+			If the server go offline, no one can commit or view the project
+
+Distributed
+	Every developer has repository on their machine. They can work offline with their local repository
+
+	How we can collaborate with this model?
+		We can synchronize our work directly with each other
+		Cyntralized workflow
+			Everyone has a local repository, but there's also a
+				central repository
+
+
+				Centalized Workflow
+	some commits					some commits
+John	---push--->		Central repository	---pull--->	Amy	
+
+
+				Intergration-Manager (open-source project)
+
+Project		----fork--->					Repository	(fork repository)
+	^								|		^
+	push local repository								clone		push (next we send pull request to maintainer)
+	|								|		
+			(the maintainer is notfited, review them)	|
+maintainer		<---pull request---			contributor	(do some commits)
+have push acces							the problem, we cannot trust them enough to give them push write-access to our repository
