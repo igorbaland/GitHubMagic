@@ -1,0 +1,7 @@
+git rebase -i commitId^ 		#represents its parent
+	reword			#we can add multiple reword
+
+	#after we close file (saved changes)
+		#we can change sequencely one or multiple commit names
+
+#WARNING we should do this in our local repository

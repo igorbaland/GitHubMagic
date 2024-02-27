@@ -1,0 +1,14 @@
+git show commitId
+git log --oneline
+
+git rebase -i commitId
+	#commands
+		pick
+		edit...
+
+	git log --oneline -all --graph
+
+	git rebase --continue		#--abort, previous
+
+	git log --oneline --all --graph
+		#clean history 

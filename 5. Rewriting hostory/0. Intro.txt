@@ -1,0 +1,4 @@
+- Why and when rewrite history
+- Undo or revert commits
+- Use interactive rebasing 
+- Recover lost commits

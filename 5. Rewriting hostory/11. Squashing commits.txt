@@ -1,0 +1,24 @@
+git rebase -i commitId
+
+	#squash, combine this commit with a previous commit
+
+	commits
+
+		1. pick		
+		2. squash		#combine with 1. 
+		3. squash		#combine with 2, which is the combination of 1. and 2.
+		4. pick
+
+	#after save/close rebase script
+		commit_editmsg
+			3 x commits messages
+				
+git reflog
+
+
+
+#fixup		#when we are using fixup, git doesn't take the message of this commit
+git rebase -i commitId
+
+
+		

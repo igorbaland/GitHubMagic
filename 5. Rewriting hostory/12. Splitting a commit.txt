@@ -1,0 +1,28 @@
+git rebase -i commitId
+
+	edit		#when we close this file, git will stop the rebase operation at this commit
+
+	git log --oneline --all --graph		#head is pointing to the commitId
+
+	git reset HEAD^		#unstaged files, --mixed by default
+
+	git status -s
+		 M		#update
+		??		#new utracked file
+
+	git add package.txt
+
+	git commit -m ""
+
+	git log --oneline --all --graph		#we have diverge
+
+	#untrack file
+	git add .
+	git commit -m ""
+
+	git log --oneline --all --graph
+
+	git rebase --continue
+
+	git log --oneline --all --graph
+

@@ -1,0 +1,20 @@
+Why we need history?
+	What
+	Why
+	When
+
+Bad history
+	poor commit messages
+	large commits
+	small commits
+
+
+Clean history
+	tell us story of our project
+
+Tools
+	squash small, related commits
+	split large commits
+	reword commit messages
+	drop unwanted commits
+	modify commits

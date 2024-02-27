@@ -1,0 +1,5 @@
+rebase -i theFirstCommitId		#to see all commits in our rebase script
+
+	#we can move and save the changes
+
+git log --oneline --all --graph

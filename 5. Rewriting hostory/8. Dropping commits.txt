@@ -1,0 +1,45 @@
+git show commitID		#dropping commit
+
+git log --oneline	
+
+git show commitId	#look at the next commit (parent)
+			conflict
+				confuse
+					child
+						we never introduced this change
+					parent
+						have an update (from the child)
+
+			git rebase -i commitId~1	#or commitId^ parent commit
+				drop commitId commitMessage		#or we can just delete this line
+									
+
+			#we get a conflict
+			git status -s
+				M	package.txt
+				DU	terms.txt	#on the one hand, we trying to delete this file
+							#on the other hand, we are trying to update this file
+
+			git log --oneline --all --graph
+
+				git mergetool
+					{local}: deleted
+					{remote}: modified
+						m		#modification, we want to keep this file in our history
+
+				git status -s
+
+				git rebase --continue
+
+				git log --oneline --all --graph
+
+				git rebase -i HEAD~3   #see the last three commits
+							in our editor remove commits, save the changes
+
+				git log --oneline --all --graph
+				
+
+
+
+				
+						

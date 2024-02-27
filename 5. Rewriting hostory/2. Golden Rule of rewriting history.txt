@@ -1,0 +1,13 @@
+Don't rewrite public history! (It's final)
+	pushed our commits
+		these commits are considered public
+			and we should not modify them.
+
+private history -> local
+public history -> remote
+
+
+
+
+
+

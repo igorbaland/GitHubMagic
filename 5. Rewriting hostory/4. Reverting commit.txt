@@ -1,0 +1,14 @@
+Reset is not a option here, because we don't want to drop the commit that we shared with other.
+
+git revert HEAD
+
+#range, between the last three commits
+git revert HEAD~3..HEAD		#git doesn't include parents commit, h2-h
+				# we can simplefy is
+					HEAD~3..
+
+			# + (console), some changes in our staging area
+				git status -s
+
+
+git reset --hard HEAD~3

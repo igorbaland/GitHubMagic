@@ -1,0 +1,9 @@
+git reset --hard HEAD~6
+
+git reflog
+
+git reset --hard HEAD@{1}		#entry id, but we can also uuse the commitId
+
+git log --oneline --all --graph
+
+git reflog show feature		#history of the feature pointer

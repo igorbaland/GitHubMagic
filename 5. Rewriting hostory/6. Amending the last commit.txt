@@ -1,0 +1,28 @@
+made a commit, but realized that we made a mistake.
+
+Modify/amend the last commit 
+
+echo cafes >> map.txt
+
+git commit -am "Render cafes on the map."
+
+git add .
+git commit  --amend -m ""		# or we can type git commit --amend and supply a new messagee/accept a privious message via editor
+			#commits are immutable, git create a new commit
+
+git log --oneline
+git show HEAD
+
+#forgot to include the file to the last commit
+echo hello > file1.txt
+git add .
+git commit --amend
+git log --oneline
+git show HEAD
+
+git reset --mixed HEAD~1	#our working directory is dirty
+
+git status -s 
+	git clean -fd		#fd, remove untrack files from our working directory
+	git add .
+	git commit -m "."

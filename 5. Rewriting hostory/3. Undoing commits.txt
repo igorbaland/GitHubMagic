@@ -1,0 +1,45 @@
+git reset --hard HEAD~1
+
+Working dir
+(B)
+
+Staging area
+(B)
+
+(B)
+ |
+(A) <- HEAD
+
+
+--soft
+	removes the commit only, but doesn't touch our staging area
+ 
+--mixed
+	unstages files
+
+--hard
+	discard local changes
+
+
+
+git show HEAD
+	
+	#soft	
+	git reset --soft HEAD~1
+
+	git status -s
+	M   terms.txt
+
+	git diff --cached
+
+	
+	#mixed
+	git reset HEAD		#--mixed is default option, we don't need to type this
+	unstaged  changes after reset:
+
+		git status -s
+		git diff
+
+
+	#hard
+	git reset --hard HEAD
