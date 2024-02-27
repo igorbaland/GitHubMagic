@@ -1,0 +1,59 @@
+Git
+	Central
+	Distributed
+
+Using
+	command line
+	code editors & IDEs
+	graphical user interface
+
+Installing Git
+	git-scm.com/downloads
+	cmd	
+		git --version
+	git BASH
+		Bourne Again Shell
+
+Configuring Git
+	name
+	email
+	default editor
+	line ending
+
+	System lvl
+		All users of the current computer
+	Global lvl
+		All repositories of the current user
+	Local lvl
+		The current repository
+
+	cmd
+		git config --global user.name "Max Mustermann"		//with space -> ""
+		git config --global user.email programming@mail.com
+		git config --global core.editor "code --wait"		//wait flag, we tell the terminal window to wait until we close the editor
+			code	//open editor
+		git config --global -e 		//open all the global settings
+		
+		Windows
+			abc
+				\r carriage return
+				/n line feed
+					git config --global core.autocrlf true
+		Mac/Linux
+			git config --global core.autoclrf input
+
+Getting help
+	google
+		git config
+	cmd
+		git config --help
+			press space 
+				to go the next page
+			q 
+				to exit 
+		git config -h
+			a short summary of this command
+			and it's options
+		
+	
+			
