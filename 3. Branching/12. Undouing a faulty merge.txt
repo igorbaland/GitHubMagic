@@ -1,0 +1,39 @@
+git log --oneline --all --graph
+		Head
+		|
+		Master
+		|
+()<-()<--------()
+	\      /
+	  ()<-()
+	      |
+	      Feature
+
+	
+Head and Master are pointing to the last commit, which is the merge commit
+
+     Head			#move both this pointers to the last commit
+     |
+     Master
+     |
+()<-()<--------()		#garbage, git removes automatically this from our repository
+	\      /
+	  ()<-()
+	      |
+	      Feature
+
+
+git reset --hard HEAD~1		#pointing to the last commit, but it is still in our repository, we can recover it		
+	Head is now at commitId ... .
+
+		git reset --hard comitId	# we should on
+
+RESETTING
+1. soft
+	last snapshot
+2. mixed			#default option, we don't need to specify
+	last snapshot + staging area
+3. hard
+	last snapshot + staging area + working directory
+
+

@@ -1,0 +1,130 @@
+Rebasing
+	# we shoul use rebasing only for branches or commits that are local in our repository
+		# if we have shared this commits with other people in our team, if we have pushed or changes, 
+			# we should not rebasing.
+	Master
+	 |
+()<-()<-()			#started  feature branch (before master)
+     \
+     (F1)<-(F2)			#using rebase, we can change the base of our feature branch, we can base it on the last
+	     |			commit on master
+	   Feature
+
+
+	#what ist the point of this?
+		#fast-forward merge
+			#now we have linear history
+			this is call rebase
+
+	we need to be cautions with rebasing
+		rebase rewrite history
+			the state befor rebasing (above)
+			
+			when we rebase the feature branch
+				git is not going to change the base or the parent of f1
+					because commits in git are immutable, they cannot be changed
+	Master
+	 |
+()<-()<-()<-(F1*)<-(F2*)	#these 2 commits they are not the same commit as before
+     \		     | 
+      \		   Feature
+       \
+	<----(F1)<-(F2)	
+			
+
+
+
+git switch -C feature/shopping-cart
+echo hello > cart.txt
+
+git add .
+git commit -m "Add cart.txt"
+
+git log --oneline -all --graph
+
+#diverged commit
+git switch master
+echo helllo >> toc.txt
+git commit  -am "Update toc.txt"
+
+git log --oneline --all --graph		#our branches are diverged
+
+#rebase
+git switch feature/shopping-cart
+git reabse master
+  sucessfully rebased aupdated refs/heads/feature/shopping-cart.	#suessfully is not the case in the real world))	most of the time we end with a conflict
+
+git log --oneline --all --graph		# we have a direct linear path
+
+git merge feature/shopping-cart		#git will do fast-forward merge
+...
+Fast-forward 
+...
+
+ git log --oneline --all --graph	#both our branches are pointing to the same commit, we have a simply clean linear history
+
+#currently we are on master
+eche ocean > tox.txt
+git commit -am "Update toc.txt
+
+	#git switch feature/shopping-cart
+	echo mountain > toc.txt
+
+	git commit -am "Write mountain to toc"
+
+	git log --oneline --graph
+
+		*
+		|  *		#Update toc.txt
+		| /
+		*		#here is the base our feature branch
+
+		#When we are trying to rebase, on the commit  
+			Update toc.txt, we are going to see a conflict
+
+		#Conflict
+		git switch feature/shopping-cart
+		git rebase master
+
+		Conflict  (content): merge conflict in toc.txt
+
+		#launch our merge tool
+		git mergetool		#p4merge
+			1. ocean
+			2. mountain
+				to combine these both... decide for one of this.
+					git rebase --continue		#--continue, tell git to apply the next commit on top of master
+										#solve conflict -> continue rebasing
+
+					git rebase --skip		#--skip, this will skip the current commit and move on to the next commit
+									if we look at the conflich and we realized that we don't actually care about this commit
+									we can skip it
+
+					git rebase --abort		#--abort, this is use useful in situations where we have so many commits to apply on top of master
+									perhaps our branches have diverged for a long time. In that case, if we don't have enough time for
+									resolving all these conflicts and going through a complete rebase we can afford the reabase here.
+									This will take us back  to the previous state, before we started rebasing
+
+#Question mark
+~/Projects/Venus	git	feature/shopping.cart	?		//? that means, that we have a new untracked files
+
+	git status			#verify
+		toc.txt.orig		#our merge tool p4merge, automatically created this file as a
+					backup
+
+		cat toc.txt.orig	#look on the content of this file
+		<<<<<<< Head
+		ocean
+		=======
+		mountain
+		>>>> shorIdCommit... Write mountain to toc
+
+		# we don't want this file in our repository
+		#remove
+		git clean -fd
+
+		#Question mark is gone/we don't have any untracked files 
+
+			#automatically configure - don't create backup for untracked files
+				git config --global mergetool.keepBackup false
+									

@@ -1,0 +1,46 @@
+#create
+git branch bugfix		#create a new branch
+	git branch		#list all branches
+		  bugfix
+		* master
+	git status		#current branch
+
+	#two ways to change branch
+		git checkout		#in the past
+
+		git switch bugfix	#better way
+
+#rename
+git branch -m bugfix bugfix/signup-form		#rename branch
+
+	code audience.txt	#some operations: delete, modification, insert
+
+	git add .
+	git commit -m ""Fix the bug that prevented the users from signing up."
+		[bugfix/signup-form dfa610a] Fix the bug that prevented the users from signing up.
+		 1 file changed, 2 insertions(+), 2 deletions(-)
+
+		git log --oneline
+			#head
+			#we are currrently on the bugfix branch
+			dfa610a (HEAD -> bugfix/signup-form) Fix the bug that prevented the users from signing up.
+
+			#just a pointer to the commit
+			5cdf444 (master) Remove toc.txt
+
+	#these changes are only visible in the bugfix branch
+		git switch master
+			#we see the old version of this file
+				#merge to bring them together
+
+					#to view the commits across all branches 
+						git log --oneline --all
+
+#-d delete
+#when we merge/finished with branch, we need to delete it 
+git branch -d bugfix/signup-form
+	#error is not fully merged
+
+#-D force deletion
+git branch -D bugfix/signup-form
+Deleted branch bugfix/signup-form (was dfa610a).

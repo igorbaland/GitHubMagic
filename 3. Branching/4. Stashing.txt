@@ -1,0 +1,51 @@
+When we switch branches, git resets our working directory to the snapshot stored  in the last commit of the target branch.
+If we have local changes in our working directory that we haven't commited yet, these changes could be lost.
+
+We made changes on bugfix
+switch to master
+add new changes
+our working directory is dirty, because we have some local changes we haven't commited yet.
+git switch to bugfix, we get an error
+	your local changes to the following files would be overwritter by checkout:
+		Please commit your changes...
+
+Stashing
+In this case, we don't want to commit the changes, because we are not done yet. In this situation like this, we should
+	stash our changes.
+		Stashing means, storing it in 
+			a safe place. We are gonna store it somewhere in a 
+				GIT repository, but this not going to be part our history.
+
+git push stash -m "New tax rules."
+	Saved working directory and index state On master: New tax rules.
+
+	#Untracked file is not be included in the stash by default
+	#If we create a new file in our stash
+		echo hello > newFile.txt
+			git status -s
+				??	newFile.txt
+					#to include it
+						git stash push --all -m "My new stash." 	#combine -am or -a -m
+
+
+git stash list
+	UID's
+		stash @{0}
+So, our working directory is clean, we can switch to branch
+
+git stash show stash@{1}
+	#we can make it shorter:
+		git stash show 1
+			audience.txt | 2+-
+			1 file changed, 1 insertion(+), 1 deletion(-)
+
+#apply stash to working directory
+git stash apply 1
+
+#remove stash
+#when we done, we want to remove the stash
+git stash drop 1
+	#to remove all stashes
+		git stash clear
+	git stash list
+						

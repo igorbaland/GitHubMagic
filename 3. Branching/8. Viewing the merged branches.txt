@@ -1,0 +1,19 @@
+Typically when we are done with branch, we should merge to master and delete the branch.
+Sometimes we forget to delete the branch.
+
+# view the list of branches that we have merged
+git branch --merged
+  bugfix/login-form
+  bugfix/signup-form
+  feature/change-password
+
+	The best practice
+	we are done and merged it 
+		we must to delete the branch
+			because in the future we can get confused
+		
+		git branch -d bugfix/login-form
+			deleteted branch..
+
+		#return a list of branches that are not have been merged to the current merge	
+		git branch --no-merged			

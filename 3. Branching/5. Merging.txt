@@ -1,0 +1,55 @@
+Merging
+	bring the changes from one branch to another
+
+in git we have 2 types of merges
+
+	fast-forward merges
+		if branches have not diverged
+
+			Master
+			|
+		()<-()<-()
+			|
+			Bugfix
+
+				#Now we switch to the bugfix branch, and make a couple of commits
+			
+			Master
+			|
+		()<-()<-()<-()<-()<-()
+				     |
+				     Bugfix
+
+				#Now we need to bring the changes back to master
+					#because these branches have not diverged and 
+					#there is a direct linear path from bug fix to master
+					#all git has to do
+						#to merge the changes
+							# is to bring the master pointer forward
+								# we can remove bugfix pointer
+				
+	3-way merges
+		if branches have diverged
+
+			Master			#When we move master to the last commit, we have some changes in master
+			|			#they don't exist in the bugfix change. If we run a merge, git cannot move the master pointer forward.
+		()<-()<-()<-()			#Otherwise we will last the latest commit in the master branch
+			|
+			()<-()
+			    |
+			    Bugfix
+
+			#If we wanna merge, we create  commit that combines these two changes
+				Master
+				  |
+		()<-()<-()<-() <-()
+			 \	/
+			  ()<-()
+			       |
+			     Bugfix
+
+		
+
+
+
+	

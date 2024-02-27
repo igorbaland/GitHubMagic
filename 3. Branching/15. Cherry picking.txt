@@ -1,0 +1,46 @@
+
+
+	Master
+	|
+()<-()<-()
+     \
+      (F1)<-(F2)		#F1 has interesting changes, we want to have it in master,
+	      |			#but we are not ready to merge our feature
+	     Feature
+
+
+	   Master
+	    |
+()<-()<-()<-(F1)
+     \
+      (F1)<-(F2)
+
+git log --oneline --all --graph
+* shortCommitId		Write mountain to toc
+|  *...			Update toc.txt
+| /
+*
+
+We are going to bring this paricular commit 
+	without merging
+
+	git  cherry-pick shortCommitId
+	
+	Conflict (content): Merge conflict
+
+	git mergetool
+		mountain
+		ocean
+
+		decide, save and close the mergetool
+
+			# we are in the middle of cherry pick
+			directory/repository	git	master	|	cherry
+
+			git status -s
+			M toc.txt
+			?? .DS_Store		#only for mac computer, we need to include to .gitignore
+			
+			git commit
+
+			git log --oneline --all --graph		

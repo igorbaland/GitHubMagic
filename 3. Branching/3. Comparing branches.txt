@@ -1,0 +1,12 @@
+#show me all commits that are in bugfix branch but not are in master
+git log master..bugfix/signup-form
+
+	#actually changes and not the list of commits
+	git diff master..bugfix/signup-form
+
+		#shorter way, because we on master, we don't need to type "master.."
+		git diff bugfix/signup-form
+
+			#sometimes, we don't want to see the changes
+			#what files are going to be affected
+			git diff --name-only bugfix/signup-form		#or name-status

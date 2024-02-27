@@ -1,0 +1,3 @@
+git merge --abort		
+	#we are back to the stage, before we started the merge
+	if we resolve some conflicts and stage the changes, these resolutions are gone.

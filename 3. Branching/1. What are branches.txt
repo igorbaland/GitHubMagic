@@ -1,0 +1,14 @@
+Branches allow us to diverge frrom the main line work and work on something else.
+() <-() <-() <-()
+	  |
+	  <-() <-() <-()	(like a seperate isolated workspace)
+		   
+Working directory
+	Master
+			
+	Feature
+		Finished 
+			a completed package
+			accomplished tests
+				Merging 
+					Master

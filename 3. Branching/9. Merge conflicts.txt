@@ -1,0 +1,66 @@
+conflicts happen,
+	
+	when the same line of code has been changed in different ways in two branches
+		changed1, changed2
+	
+	change in one branch, but it is deleted in another branch
+		changed, delete
+	
+	the same file is added twice in two different branches but the content of this file is different
+		add1, add2
+
+In these cases, git doesn't kwon how to figure out these changes. It will stop the merge process
+
+git switch -C bugfix/change-password
+
+	code change-password.txt
+		#some changes
+
+	#adding to the staging area
+	git add .
+	git commit -m "Update change-password.txt"
+
+		#switch to the master branch
+		git switch master
+
+		#update the file in a different way
+		code change-password.txt
+			#make some changes
+
+
+			git merge bugfix/change-password		
+				Auto-merging change-passwort.txt				#we get a conflict
+				Conflict (content): Merge conflict in change-password.txt
+				Automatic merge failed; fix...
+
+				git status		#umerged paths:
+					both modiefed: change-password.txt	
+
+
+			
+		#Solve conflict
+			code change-passwort.txt
+				<<<<<< head		#show two branches, that modificated the same file 
+				>>>>>> bugfix	
+
+					1. Accept current change. 
+						change in the master branch.
+					2. Accept incomming change. 
+						change in the other branch
+					3. Accept both changes
+					4. Compare changes
+
+
+			manually by hand
+				remove two markers
+					<<<< head
+					>>>> bugfix
+						Ideally, after removing markers we shouldn't add a new line of code
+
+					add to staging area
+						git add change-password.txt
+
+						git commit
+				
+
+		

@@ -1,0 +1,68 @@
+
+		   Master    
+		   |		
+()<-()<-()<-------() 		#B1+B2 Squash merging
+     \	        		#this new commit is not a merge commit, because it doesn't have two parents		
+      (B1)<-(B2) 		#it doesn't have reference to B2
+	     |		
+	     Bugfix
+
+
+		Master
+		  |
+()<-()<-()<------()B1+B2	#Simple linear history, this the benefit of squash merging
+
+
+#practice
+git switch -C bugfix/photo-upload
+	#1. commit
+		echo bugfix >> audience.txt
+		git commit -am "Update audience.txt" 			#-am stage and commit all the changes in one step 
+
+	#2. commit
+		echo bugfix >> toc.txt
+		git commit -am "Update toc.txt"
+
+	git log --oneline --graph
+
+	#squash merging
+		git switch master
+
+		git merge --squash bugfix/photo-upload			# git created a new commit called a squash commit, but we don't have a commit yet
+									# all these changes are in our staging area
+
+			Squash commit -- not updating HEAD		
+			  audience.txt  | 1 +				
+			  toc.txt       | 2 +-
+			  2 files changed, 2 insertions(+), 1 deletion(-1)
+
+		git status -s
+		M audience.txt
+		M toc.txt
+
+		git commit -m "Fix the bug on the photo upload page."
+
+		git log --oneline --graph
+
+		git branch --merged			#our bugfix/photo-upload in not in this list, because technically we don't have commits that connect this two branches
+		  bugfix/change-password		
+		  bugfix/signup-form
+		  feature/change-password
+		*master
+
+
+		#it it super important to remove our target branch, otherwise this branch will be sitting there and make create confusions in the future
+
+			git branch --no-merged
+			  bugfix/photo-upload	
+			
+			git branch -d bugfix/photo-upload			#capital -D
+			  error: the branch 'name' is not fully merged
+
+			git log --oneline --graph
+			
+			
+		
+
+	
+	

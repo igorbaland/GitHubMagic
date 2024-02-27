@@ -1,0 +1,23 @@
+git switch -C feature/send-email
+
+echo river > toc.txt
+
+git commit -am "Update toc.txt"
+
+# we want to bring only this file to the master branch
+git switch master
+
+git restore --source=feature/send-email -- toc.txt		#git is going restore our table of content file in our working directory
+								#from the latest version of this file stored in this branch
+
+#now our working directory is dirty
+git status -s
+ M toc.txt
+
+	cat toc.txt	#view a content
+		river
+
+
+
+
+

@@ -1,0 +1,6 @@
+- Use branches
+- Compare branches
+- Merge branches
+- Resolve conflicts
+- Undo a faulty merge
+- Essential tools (stashing, cherry picking)

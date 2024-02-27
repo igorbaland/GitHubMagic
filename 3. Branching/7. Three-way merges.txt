@@ -1,0 +1,48 @@
+git log --oneline --all --graph
+
+git switch -C feature/change-password
+	git log --oneline --all --graph	
+
+		echo hello > change-password.txt
+		
+			#stage the changes
+			git add .
+			git commit -m "Build the change password form."		#our branches have not dieverged yet
+										#because there is a direct linear path
+
+			#make these branches diverge
+			git switch master 
+			code objectives.txt		#make some changes
+				git add . 				#stage the changes
+				git commit -m "Update objectives.txt"
+
+				git log --oneline --all --graph		#our branches have diverged
+
+				* master
+				| * feature/change password		#when we are trying to merge the changes, git are going to run a three-way merge
+				|/
+				* merge branch 'bugfix/login-form'	#Now we have not dircet linear path from change password to master
+				|\					#if we start from bugfix/login-form we can't go to master.
+				| * bugfix/login-form
+				|/
+				* bugfix/sigup-form
+
+					git merge feature/change-password
+
+						git log --oneline --all --graph
+						
+							* master
+							|\
+							| * feature change password
+							* | Update objectives.txt
+							|/
+							* merge branch 'bugfix/login-form'
+ 
+					
+						
+
+					
+
+
+		
+	

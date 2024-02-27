@@ -1,0 +1,53 @@
+git log --oneline --all --graph		#if we use branches, it's a good idea to always include the graph option
+					#in this point we will not see the differences, but as we go forward, we will see that 
+					#the graph option will give us a better representation of our  
+
+git merge bugfix/signup-form
+	Updating commitId..commitId
+	Fast-forward
+	filename | 5++--
+	1 file changed, 2 inssertions(+), 3 deletions(-)
+
+		git log --oneline --all --graph
+
+
+#create branch and switch, shortcut
+git switch -C bugfix/login-form 		#-C for create, with this we can create and switch in one step
+Switched to a new branch 'bugfix/login-form'
+
+#open table of content file
+code toc.txt
+	#make some changes and save
+
+	git commit .
+	git commit -m "Update toc.txt"
+
+		git log --oneline --all --graph
+
+			#merge, switch to master branch
+			git switch master
+				
+				git merge --no-ff bugfix/login-form		#--no-ff, no fast forward option
+										# even fast-forward is possible, don't do it
+
+				git log --oneline --all --graph			#HERE GRAPH IS USEFUL
+				|\
+				| * commitId
+				|/
+
+Benefit of fast-forward merge
+	Cons
+		Pollutes the history
+	Pros
+		True reflection of history
+		Allow reverting a feature
+
+No fast-forward merges
+We don't want to type every time 
+	--no-ff
+		better way, disable fast-forward merge for particular repository or all our repositories
+
+			git config ff no	//paricular repository
+
+			git config --global ff no		//all repositories
+			
